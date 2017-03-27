@@ -1,6 +1,6 @@
 {
   "name": "foola",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "most abstract fooll class",
   "main": "index.js",
   "scripts": {
