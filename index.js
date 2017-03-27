@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const pl = require('pug-layout');
-const filer = require('full-filer');
+const filer = require('fooll-filer');
 
 class Wihda {
   constructor(dirname) {
