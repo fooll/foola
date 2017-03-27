@@ -1,0 +1,11 @@
+{
+  "name": "foola",
+  "version": "0.0.1",
+  "description": "most abstract fooll class",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abu Rawi",
+  "license": "ISC"
+}
