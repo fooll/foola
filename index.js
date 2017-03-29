@@ -4,8 +4,9 @@ const pl = require('pug-layout');
 const filer = require('fooll-filer');
 
 class Foolla {
-  constructor(dirname) {
+  constructor(dirname, server) {
     this.dirname = dirname;
+    this.server = server;
     this.viewsFolder = 'views';
     this.clientFolder = 'client';
     this.loadViews();
