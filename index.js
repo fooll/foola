@@ -3,7 +3,7 @@ const path = require('path');
 const pl = require('pug-layout');
 const filer = require('fooll-filer');
 
-class Wihda {
+class Foolla {
   constructor(dirname) {
     this.dirname = dirname;
     this.viewsFolder = 'views';
@@ -23,17 +23,13 @@ class Wihda {
     return views;
   }
 
-  file() {
+  GET_file() {
     var dirname = this.dirname;
     var clientFolder = this.clientFolder;
-    return {
-      get: function (req, res) {
-        var filename = req.params.join('/');
-        req.filePath = path.resolve(dirname, clientFolder, filename);
-        filer(req, res);
-      }
-    }
+    var filename = req.params.join('/');
+    req.filePath = path.resolve(dirname, clientFolder, filename);
+    filer(req, res);
   }
 }
 
-module.exports = Wihda;
+module.exports = Foolla;
