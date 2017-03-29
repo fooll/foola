@@ -8,22 +8,23 @@ class Foolla {
     this.dirname = dirname;
     this.viewsFolder = 'views';
     this.clientFolder = 'client';
+    this.loadViews();
   }
 
-  get views() {
+  loadViews() {
     var views = {};
-    var viewsFolderPath = path.resolve(this.dirname, this.viewsFolder);
-    var viewsDirFiles = fs.readdirSync(viewsFolderPath);
-    viewsDirFiles.forEach(function (viewBase) {
-      var viewPath = path.resolve(viewsFolderPath, viewBase);
+    var viewsPath = path.resolve(this.dirname, this.viewsFolder);
+    var viewsBases = fs.existsSync(viewsPath) ? fs.readdirSync(viewsPath) : [];
+    viewsBases.forEach(function (viewBase) {
+      var viewPath = path.resolve(viewsPath, viewBase);
       var viewType = viewBase.startsWith('L_') ? 'Layout' : 'Page';
       var viewName = path.parse(viewBase).name;
       views[viewName] = new pl[viewType](viewPath);
     });
-    return views;
+    this.views = views;
   }
 
-  GET_file() {
+  GET_file(req, res, server) {
     var dirname = this.dirname;
     var clientFolder = this.clientFolder;
     var filename = req.params.join('/');
