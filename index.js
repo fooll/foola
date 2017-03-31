@@ -25,7 +25,7 @@ class Foolla {
     this.views = views;
   }
 
-  GET_file(req, res, server) {
+  GET_file(req, res) {
     var dirname = this.dirname;
     var clientFolder = this.clientFolder;
     var filename = req.params.join('/');
