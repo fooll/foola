@@ -3,7 +3,7 @@ const path = require('path');
 const pl = require('pug-layout');
 const filer = require('fooll-filer');
 
-class Foolla {
+class Zinko {
   constructor(dirname, server) {
     this.dirname = dirname;
     this.server = server;
@@ -16,7 +16,7 @@ class Foolla {
     var views = {};
     var viewsPath = path.resolve(this.dirname, this.viewsFolder);
     var viewsBases = fs.existsSync(viewsPath) ? fs.readdirSync(viewsPath) : [];
-    viewsBases.forEach(function (viewBase) {
+    viewsBases.forEach(function(viewBase) {
       var viewPath = path.resolve(viewsPath, viewBase);
       var viewType = viewBase.startsWith('L_') ? 'Layout' : 'Page';
       var viewName = path.parse(viewBase).name;
@@ -34,4 +34,4 @@ class Foolla {
   }
 }
 
-module.exports = Foolla;
+module.exports = Zinko;
