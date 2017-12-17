@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const pl = require('pug-layout');
-const filer = require('fooll-filer');
+const filer = require('zinky-filer');
 
 class Zinko {
   constructor(dirname, server) {

@@ -9,7 +9,7 @@
   "author": "Abu Rawi",
   "license": "ISC",
   "dependencies": {
-    "fooll-filer": "0.0.*",
+    "zinky-filer": "0.0.*",
     "pug-layout": "^1.2.2"
   }
 }
