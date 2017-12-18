@@ -4,9 +4,9 @@ const pl = require('pug-layout');
 const filer = require('zinky-filer');
 
 class Zinko {
-  constructor(dirname, server) {
+  constructor(dirname, app) {
     this.dirname = dirname;
-    this.server = server;
+    this.app = app;
     this.viewsFolder = 'views';
     this.clientFolder = 'client';
     this.loadViews();
