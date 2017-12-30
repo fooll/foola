@@ -1,6 +1,6 @@
 {
   "name": "zinko",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "most abstract zinko class",
   "main": "index.js",
   "scripts": {
