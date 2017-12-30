@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const pl = require('pug-layout');
-const filer = require('zinky-filer');
 
 class Zinko {
   constructor(dirname, app) {
@@ -29,8 +28,8 @@ class Zinko {
     var dirname = this.dirname;
     var clientFolder = this.clientFolder;
     var filename = req.params.join('/');
-    req.filePath = path.resolve(dirname, clientFolder, filename);
-    filer(req, res);
+    var filePath = path.resolve(dirname, clientFolder, filename);
+    res.download(filePath);
   }
 }
 
