@@ -15,11 +15,12 @@ class Zinko {
     var views = {};
     var viewsPath = path.resolve(this.dirname, this.viewsFolder);
     var viewsBases = fs.existsSync(viewsPath) ? fs.readdirSync(viewsPath) : [];
-    viewsBases.forEach(function(viewBase) {
-      var viewPath = path.resolve(viewsPath, viewBase);
-      var viewType = viewBase.startsWith('L_') ? 'Layout' : 'Page';
-      var viewName = path.parse(viewBase).name;
-      views[viewName] = new pl[viewType](viewPath);
+    viewsBases.forEach(vBase => {
+      var vPath = path.resolve(viewsPath, vBase);
+      var vType = vBase.startsWith('L_') ? 'Layout' : 'Page';
+      var vName = path.parse(vBase).name;
+      if (this.app.stopPugLayout) views[vName] = fs.readFileSync(vPath, 'utf-8');
+      else views[vName] = new pl[vType](vPath);
     });
     this.views = views;
   }
