@@ -29,7 +29,7 @@ class Zinko {
     var clientFolder = this.clientFolder;
     var filename = req.params.join('/');
     var filePath = path.resolve(dirname, clientFolder, filename);
-    res.download(filePath);
+    res.sendFile(filePath);
   }
 }
 
