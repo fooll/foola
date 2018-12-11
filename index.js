@@ -6,6 +6,7 @@ class Zinko {
   constructor(dirname, app) {
     this.dirname = dirname;
     this.app = app;
+    this.A = this.app;
     this.viewsFolder = 'views';
     this.clientFolder = 'client';
   }
@@ -16,7 +17,7 @@ class Zinko {
     var vBase = viewsBases.find(b => viewName == path.parse(b).name);
     var vPath = path.resolve(viewsPath, vBase);
     var vType = vBase.startsWith('L_') ? 'Layout' : 'Page';
-    if (this.app.stopPugLayout) return fs.readFileSync(vPath, 'utf-8');
+    if (this.A.stopPugLayout) return fs.readFileSync(vPath, 'utf-8');
     return new pl[vType](vPath);
   }
 
