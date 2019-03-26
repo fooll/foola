@@ -9,6 +9,7 @@ class Zinko {
     this.A = this.app;
     this.viewsFolder = 'views';
     this.clientFolder = 'client';
+    if (this.useZongel && this.app.db) this.loadModel();
   }
 
   v(viewName) {
@@ -19,6 +20,11 @@ class Zinko {
     var vType = vBase.startsWith('L_') ? 'Layout' : 'Page';
     if (this.A.stopPugLayout) return fs.readFileSync(vPath, 'utf-8');
     return new pl[vType](vPath);
+  }
+
+  loadModel() {
+    const Model = require(path.resolve(this.dirname, 'model.js'));
+    this.model = new Model(this.app.db);
   }
 
   GET_file(req, res) {
