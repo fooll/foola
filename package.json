@@ -9,6 +9,6 @@
   "author": "Abu Rawi",
   "license": "ISC",
   "dependencies": {
-    "pug-layout": "^1.2.2",
+    "pug-layout": "^1.2.2"
   }
 }
