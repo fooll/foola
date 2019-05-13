@@ -24,7 +24,7 @@ class Zinko {
 
   loadModel() {
     const Model = require(path.resolve(this.dirname, 'model.js'));
-    this.model = new Model(this.app.db);
+    this.model = new Model(this);
   }
 
   GET_file(req, res) {
